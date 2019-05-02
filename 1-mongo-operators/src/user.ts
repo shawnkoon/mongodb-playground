@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 export interface UserProps extends mongoose.Document {
   name: string;
-  postCount: number;
+  likes: number;
 }
 
 const UserSchema = new Schema({
@@ -16,7 +16,7 @@ const UserSchema = new Schema({
       message: 'Name must be longer than 2 characters.',
     },
   },
-  postCount: Number,
+  likes: Number,
 });
 
 const User = mongoose.model<UserProps>('user', UserSchema);

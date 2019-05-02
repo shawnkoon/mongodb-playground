@@ -9,7 +9,7 @@ describe('Update User records', () => {
   const incrementValue = 3;
 
   beforeEach(async () => {
-    shawnkoon = new User({ name: 'shawnkoon', postCount: 0 });
+    shawnkoon = new User({ name: 'shawnkoon', likes: 0 });
     await shawnkoon.save();
   });
 
@@ -24,13 +24,13 @@ describe('Update User records', () => {
       'id should be same'
     );
     assert.equal(
-      updated[0].postCount,
+      updated[0].likes,
       incrementValue,
-      `postCount now should be ${incrementValue}`
+      `likes now should be ${incrementValue}`
     );
   });
 
-  it(`Set shawnkoon users' postCount incremented by ${incrementValue}`, async () => {
-    await User.update({ name: 'shawnkoon' }, { $inc: { postCount: incrementValue } });
+  it(`Set shawnkoon users' likes incremented by ${incrementValue}`, async () => {
+    await User.update({ name: 'shawnkoon' }, { $inc: { likes: incrementValue } });
   });
 });
