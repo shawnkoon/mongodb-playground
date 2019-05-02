@@ -2,8 +2,13 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
+// App
+import PostSchema, { PostProps } from './post';
+
 export interface UserProps extends mongoose.Document {
   name: string;
+  postCount: number;
+  posts: PostProps[];
   likes: number;
 }
 
@@ -17,6 +22,11 @@ const UserSchema = new Schema({
     },
   },
   likes: Number,
+  posts: [PostSchema],
+});
+
+UserSchema.virtual('postCount').get(function(this: UserProps) {
+  return this.posts.length;
 });
 
 const User = mongoose.model<UserProps>('user', UserSchema);

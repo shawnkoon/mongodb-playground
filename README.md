@@ -13,6 +13,7 @@ Playground for **TypeScript** & **Mocha** & **MongoDB**
 
 0. [Basic CRUD operations](0-basic-crud)
 1. [Advanced Operators & Validation](1-mongo-operators)
+2. [Create relational on ORM Model](2-relational-data)
 
 ## How to run 💻
 
