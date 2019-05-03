@@ -7,13 +7,14 @@ Playground for **TypeScript** & **Mocha** & **MongoDB**
 - Learn NoSQL(**MongoDB**) usage.
 - Learn DB operations using strongly typed JavaScript(**TypeScript**).
 - Learn ORM(**Mongoose**).
-- Practice Test Driven Development(TDD) using populer testing framework(**Mocha**).
+- Practice Test Driven Development(TDD) using popular testing framework(**Mocha**).
 
 ## Lessons 📝
 
 0. [Basic CRUD operations](0-basic-crud)
 1. [Advanced Operators & Validation](1-mongo-operators)
 2. [Create relational on ORM Model](2-relational-data)
+3. [Populate Model Associations](3-schema-associations)
 
 ## How to run 💻
 
