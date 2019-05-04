@@ -16,6 +16,7 @@ Playground for **TypeScript** & **Mocha** & **MongoDB** & **Mongoose**
 2. [Create relational on ORM Model](2-relational-data)
 3. [Populate Model Associations](3-schema-associations)
 4. [Mongoose pre/post Middleware](4-mongoose-middleware)
+5. [Handling large collections using limit/skip/sort](5-large-collection-pagination)
 
 ## How to run 💻
 
