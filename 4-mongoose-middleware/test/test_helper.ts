@@ -1,22 +1,32 @@
 // Lib
-import mongoose from 'mongoose';
+import mongoose = require('mongoose');
 
-before(async () => {
-  await mongoose.connect('mongodb://localhost:27017/users_test', {
+// App
+import User from '../src/user';
+import BlogPost from '../src/blogPost';
+import Comment from '../src/comment';
+
+before(() => {
+  console.log('>>> Connecting to a DB');
+  mongoose.connect('mongodb://localhost:27017/users_test', {
     useNewUrlParser: true,
   });
 
-  await mongoose.connection
-    .once('open', () => {})
-    .on('error', error => console.warn('>>> Warning', error));
+  mongoose.connection
+    .on('error', error => console.warn('>>> Warning', error))
+    .once('open', () => console.log('>>> Connected!'));
+
+  console.log('>>> Finished Connecting to a DB');
 });
 
 beforeEach(async () => {
-  await ['users', 'blogposts', 'comments'].forEach(async model => {
-    try {
-      await mongoose.connection.collections[model].drop();
-    } catch {
-      console.error(`>>> Attempted to drop a collection which doesn't exist - ${model}`);
-    }
-  });
+  console.log('>>> Cleaning collections');
+  try {
+    await User.remove({});
+    await BlogPost.remove({});
+    await Comment.remove({});
+  } catch (e) {
+    console.error(`>>> Attempted to drop a collection which doesn't exist`, e);
+  }
+  console.log('>>> Finished Cleaning collections');
 });

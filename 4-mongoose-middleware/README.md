@@ -1,17 +1,9 @@
 # Lesson 4 - Mongoose Middleware for Resource Clean-up
 
-Learn how to populate Model assoications in Schema. Also take a look at how to create&fetch models with associated data in TypeScript.
+Learn how to add middleware to the mongoose event. Such that, we can execute certain activity that will happen on those events.
 
-## Possible Mongoose Events
-
-You can add either `pre` or `post` middlewares on following mongoose events.
-
-- init
-- validate
-- save
-- remove
+In this lesson, we looked at how to remove all the assoicated blogPosts when user was deleted.
 
 ## Study Links
 
-- [Mongoose populate doc](https://mongoosejs.com/docs/populate.html)
-- [TypeScript popualte problem](https://stackoverflow.com/questions/47923403/typescript-how-to-define-model-in-combination-with-using-mongoose-populate)
+- [Mongoose Middleware async/await](http://thecodebarbarian.com/introducing-mongoose-5#promises-and-async-await-with-middleware)

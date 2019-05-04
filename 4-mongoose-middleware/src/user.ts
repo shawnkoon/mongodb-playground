@@ -32,6 +32,13 @@ UserSchema.virtual('postCount').get(function(this: UserProps) {
   return this.posts.length;
 });
 
+// Create pre-remove middleware hook.
+UserSchema.pre('remove', async function(this: UserProps) {
+  const BlogPost = mongoose.model('blogpost'); // Avoid cyclic imports.
+
+  await BlogPost.remove({ _id: { $in: this.blogPosts } });
+});
+
 const User = mongoose.model<UserProps>('user', UserSchema);
 
 export default User;

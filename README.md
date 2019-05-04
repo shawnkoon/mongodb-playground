@@ -1,6 +1,6 @@
 # mongodb-playground
 
-Playground for **TypeScript** & **Mocha** & **MongoDB**
+Playground for **TypeScript** & **Mocha** & **MongoDB** & **Mongoose**
 
 ## Purpose 🎯
 
@@ -15,6 +15,7 @@ Playground for **TypeScript** & **Mocha** & **MongoDB**
 1. [Advanced Operators & Validation](1-mongo-operators)
 2. [Create relational on ORM Model](2-relational-data)
 3. [Populate Model Associations](3-schema-associations)
+4. [Mongoose pre/post Middleware](4-mongoose-middleware)
 
 ## How to run 💻
 
